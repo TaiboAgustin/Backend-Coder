@@ -1,0 +1,1 @@
+[{"modelo":"Nike Uptempo Georgetown","price":200,"stock":10,"genId":1},{"modelo":"Jordan Retro 1 Chicago","price":330,"stock":10,"genId":2},{"modelo":"Adidas Forum Bad Bunny Easter Egg","price":220,"stock":10,"genId":3}]

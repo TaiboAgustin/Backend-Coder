@@ -1,0 +1,14 @@
+{
+  "name": "serverexpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "entregable3.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

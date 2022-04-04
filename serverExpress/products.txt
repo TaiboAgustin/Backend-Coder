@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Escuadra",
+        "price": 123.45,
+        "genId": 1
+    },
+    {
+        "title": "Calculadora",
+        "price": 234.56,
+        "genId": 2
+    },
+    {
+        "title": "Globo terraqueo",
+        "price": 345.67,
+        "genId": 3
+    }
+
+]
