@@ -1,9 +1,9 @@
 const express = require('express');
 
 const router = express.Router();
-const Container = require('../entregable2.js');
+const productosController = require('../src/controller/productosController.js');
 
-const container = new Container('./products.txt');
+const container = new productosController('./products.json');
 
 router.get('/', (req, res) => {
     const products = container.getAll();
@@ -35,13 +35,13 @@ router.post('/', (req, res) => {
     const products = container.getAll();
     const genId = products.length + 1;
     const newProduct = {
+        title: body.title,
+        price: body.price,
         genId,
-        ...req.body,
     };
     container.save(newProduct);
-    res.json({
-        message : 'Product saved',
-    });
+
+    res.redirect('/');
 });
 
 router.put('/:genId', (req, res) => {
