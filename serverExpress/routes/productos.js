@@ -1,12 +1,10 @@
 const express = require('express');
 
 const router = express.Router();
-const productosController = require('../src/controller/productosController.js');
-
-const container = new productosController('./products.json');
+const { controller } = require('../src/controller/productosController');
 
 router.get('/', (req, res) => {
-    const products = container.getAll();
+    const products = controller.getAll();
     if(products.length != 0){
         res.json({
             products,
@@ -20,7 +18,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:genId', (req, res) => {
-    const products = container.getAll();
+    const products = controller.getAll();
     const found = products.filter((product) => product.genId == req.params.genId);
     if(found.length != 0){
         res.json(found);
@@ -31,21 +29,22 @@ router.get('/:genId', (req, res) => {
     }
 })
 
-router.post('/', (req, res) => {
-    const products = container.getAll();
+router.post('/save', (req, res) => {
+    const body = req.body;
+    const products = controller.getAll();
     const genId = products.length + 1;
     const newProduct = {
         title: body.title,
         price: body.price,
-        genId,
+        genId: genId,
     };
-    container.save(newProduct);
+    controller.save(newProduct);
 
     res.redirect('/');
 });
 
 router.put('/:genId', (req, res) => {
-    const products = container.getAll();
+    const products = controller.getAll();
     const found = products.filter((product) => product.genId == req.params.genId);
     if(found.length != 0){
         const updatedProduct = {
@@ -64,7 +63,7 @@ router.put('/:genId', (req, res) => {
 });
 
 router.delete('/:genId', (req, res) => {
-    const products = container.getAll();
+    const products = controller.getAll();
     const found = products.filter((product) => product.genId == req.params.genId);
     if(found.length != 0){
         container.deleteById(req.params.genId);

@@ -19,14 +19,14 @@ class productosController{
         const parsedFile = JSON.parse(content);
         const updateObj = {
             genId : parsedFile.length + 1,
-            ...obj,
+            title: obj.title,
+            price: obj.price,
         };
 
         parsedFile.push(updateObj);
 
         fs.writeFileSync(this.file, JSON.stringify(parsedFile));
         console.log('Producto guardado correctamente');
-        return genId;
 
     }
 
