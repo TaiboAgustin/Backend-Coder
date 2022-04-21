@@ -1,6 +1,9 @@
-<h1>HISTORIAL</h1>
-<% if (productos.length> 0) { %>
-<%- include('./tabla.ejs') %>
-<% } else {%>
-<p>No hay datos</p>
-<% } %>
+<div class="container">
+    <h1>HISTORIAL DE PRODUCTOS AGREGADOS</h1>
+    <% if (productos.length> 0) { %>
+    <%- include('./tabla.ejs') %>
+    <% } else {%>
+    <p>No hay datos</p>
+    <% } %>
+</div>
+    

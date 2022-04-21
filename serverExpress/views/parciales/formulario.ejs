@@ -1,14 +1,23 @@
-<form method="POST" action="api/productos/save">
-    <div>
+<form method="POST" action="api/productos/save" class="container">
+    <!-- <div>
         <label for="title">Nombre del producto</label>
         <input type="text" name="title" required>
+    </div> -->
+    <div class="input-group mb-3 mt-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Nombre del producto</span>
+        <input type="text" name="title" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
     </div>
-    <div>
+    <!-- <div>
         <label for="price">Precio del producto</label>
         <input type="number" name="price" required>
+    </div> -->
+
+    <div class="input-group mb-3 ">
+        <span class="input-group-text" id="inputGroup-sizing-default">Precio del producto</span>
+        <input type="number" name="price" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     </div>
     <div>
-        <input type="submit">
+        <button type="submit" class="btn btn-success">Enviar producto</button>
     </div>
 </form>
