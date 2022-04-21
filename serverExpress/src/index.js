@@ -53,23 +53,6 @@ WSServer.on('connection', (socket) => {
         console.log(`Nuevo mensaje de: ${mensaje.nombre} \n dice: ${mensaje.mensaje}`);
     });
 
-    socket.emit('productCatalog', {
-        products: productCatalog,
-        viewTitle: "Listado de productos",
-        errorMessage: "No hay productos."
-    });
-    socket.on('newProduct', (data) => {
-        productCatalog.push({
-            id: productCatalog.length + 1,
-            ...data
-        });
-        console.log(productCatalog);
-        io.sockets.emit('productCatalog', {
-            products: productCatalog,
-            viewTitle: "Listado de productos",
-            errorMessage: "No hay productos."
-        });
-    });
 })
 
 //definicion de las rutas
