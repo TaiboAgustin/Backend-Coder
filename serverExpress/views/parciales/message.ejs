@@ -10,10 +10,22 @@
 <body>
     <div class="container">
         <h1>Centro de mensajes</h1>
-    <form id="form"">
-        <input type="text" id="username" placeholder="Tu nombre" />
-        <input type="text" id="texto" placeholder="Tu mensaje" />
-        <input type="submit" value="Enviar mensaje" />
+    <form id="form"" name="Messages" onsubmit="sendMsg(this)">
+        <!-- <input type="text" id="username" placeholder="Tu nombre" /> -->
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Tu nombre</span>
+            <input type="text" id="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <!-- <input type="text" id="texto" placeholder="Tu mensaje" /> -->
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Mensaje</span>
+            <input type="text" id="msg" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+
+        <!-- <input type="submit" value="Enviar mensaje" /> -->
+        <button type="submit" class="btn btn-success">Enviar mensaje al chat</button>
     </form>
     <div id="messages"></div>
     </div>
